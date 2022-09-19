@@ -4,9 +4,9 @@
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-<h1> Api para o uso de uma hamburgueria </h1>
+<h1> Api para o uso da lanchonete do DevBurger </h1>
 
-<p> API desenvolvida para interagir com o front-end de uma hamburgueria e com banco de dados Postgres e MongoDB.</p>
+<p> API desenvolvida para interagir com o front-end e com banco de dados Postgres e MongoDB para a lanchonete do DevClub de nome DevBurger.</p>
 
 <p> Para rodar o servidor no vscode use <i><u>yarn nodemon</u> </i> do próprio vscode</p>
 <p> Em caso da porta 3000 estar sendo utilizada, vá em <i><u> src> server.js e em app.listen(3000); mude para a porta desejada</u> </i> </p> 
