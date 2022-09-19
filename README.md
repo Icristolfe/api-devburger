@@ -8,8 +8,8 @@
 
 <p> API desenvolvida para interagir com o front-end de uma hamburgueria e com banco de dados Postgres e MongoDB.</p>
 
-<p> Para rodar o servidor no vscode use <i>yarn nodemon </i> do próprio vscode</p>
-<p> Em caso da porta 3000 estar sendo utilizada, vá em <i> src> server.js e em app.listen(3000); mude para a porta desejada </i> </p> 
+<p> Para rodar o servidor no vscode use <i><u>yarn nodemon</u> </i> do próprio vscode</p>
+<p> Em caso da porta 3000 estar sendo utilizada, vá em <i><u> src> server.js e em app.listen(3000); mude para a porta desejada</u> </i> </p> 
 
 ## Criador do Projeto
 <table>
