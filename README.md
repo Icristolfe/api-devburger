@@ -11,6 +11,8 @@
 <p> Para rodar o servidor no vscode use <i><u>yarn nodemon</u> </i> do próprio vscode</p>
 <p> Em caso da porta 3000 estar sendo utilizada, vá em <i><u> src> server.js e em app.listen(3000); mude para a porta desejada</u> </i> </p> 
 
+<img href="https://flic.kr/p/2nN85YC" alt="insomnia-test">
+
 ## Criador do Projeto
 <table>
   <tr>
