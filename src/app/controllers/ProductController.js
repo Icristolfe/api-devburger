@@ -11,9 +11,9 @@ class ProductController {
       category_id: Yup.number().required(),
       offer: Yup.boolean(),
     });
-
+    
     try {
-      schema.validateSync(request.body, { abortEarly: false });
+      await schema.validateSync(request.body, { abortEarly: false });
     } catch (err) {
       return response.status(400).json({ error: err.errors });
     }
@@ -21,13 +21,10 @@ class ProductController {
     const { admin: isAdmin } = await User.findByPk(request.userId);
 
     if (!isAdmin) {
-      return response.status(404).json();
+      return response.status(401).json();
     }
 
-    let path;
-    if (request.file) {
-      path = request.file;
-    }
+    const { filename: path } = request.file
     const { name, price, category_id, offer } = request.body;
 
     const product = await Product.create({
@@ -35,10 +32,18 @@ class ProductController {
       price,
       category_id,
       path,
-      offer,
+      offer
     });
+    console.log(`resultado do product: ${product}`)
+    if(product) {
+      return response.json({ product }  );
 
-    return response.json({ product });
+    }
+
+    else {
+      return response.json({message: "product is empty"})
+    }
+
   }
 
   async index(request, response) {
@@ -78,7 +83,7 @@ class ProductController {
     const { id } = request.params;
 
     const product = await Product.findByPk(id);
-
+    
     if (!product) {
       return response
         .status(401)
