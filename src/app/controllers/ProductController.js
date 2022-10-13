@@ -34,7 +34,6 @@ class ProductController {
       path,
       offer
     });
-    console.log(`resultado do product: ${product}`)
     if(product) {
       return response.json({ product }  );
 
