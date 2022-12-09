@@ -1,4 +1,4 @@
-<h1> API Dev Burger </h1>
+<h1>🔰 API Dev Burger </h1>
 
 <p>API desenvolvida para integração à uma lanchonete onde é possível criar sua conta e fazer login permitindo a separação entre administrador e cliente, para o administrador é possível adicionar produtos e categorias com imagens e ao cliente é possível realizar seu pedido e acompanhar o status do mesmo dentro da aplicação.</p>
 
