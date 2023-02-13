@@ -22,13 +22,13 @@ class OrderController {
     // Tratamento de erros usando TryCatch
 
     try {
-      schema.validateSync(request.body, { abortEarly: false });
+      await schema.validateSync(request.body, { abortEarly: false });
     } catch (err) {
       return response.status(400).json({ error: err.errors });
     }
 
     const productsId = request.body.products.map((product) => product.id);
-
+   
     const updatedProducts = await Product.findAll({
       where: {
         id: productsId,
@@ -36,8 +36,8 @@ class OrderController {
       include: [
         {
           model: Category,
-          as: "category",
-          attributes: ["name"],
+          as: 'category',
+          attributes: ['name'],
         },
       ],
     });
@@ -67,7 +67,7 @@ class OrderController {
       products: editedProduct,
       status: "Pedido realizado",
     };
-    console.log(editedProduct);
+    console.log(`const produtos: ${updatedProducts}`);
     const orderResponse = await Order.create(order);
 
     return response.status(201).json(orderResponse);
@@ -75,14 +75,13 @@ class OrderController {
 
   async index(request, response) {
     const orders = await Order.find();
-    console.log(orders);
 
     return response.json(orders);
   }
 
   async update(request, response) {
     const schema = Yup.object().shape({
-      status: Yup.array().required(),
+      status: Yup.string().required(),
     });
 
     // Tratamento de erros usando TryCatch

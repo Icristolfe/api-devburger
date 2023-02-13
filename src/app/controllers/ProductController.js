@@ -88,13 +88,10 @@ class ProductController {
         .status(401)
         .json({ error: "make sure your product ID is correct" });
     }
-
-    let path;
-
+    let path
     if (request.file) {
-      path = request.file.filename;
+        path = request.file.filename
     }
-
     const { name, price, category_id, offer } = request.body;
 
     await Product.update(
@@ -110,7 +107,7 @@ class ProductController {
       }
     );
 
-    return response.status(200).json();
+    return response.status(200).json(name,price,category_id,path,offer,);
   }
 }
 

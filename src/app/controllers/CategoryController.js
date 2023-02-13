@@ -77,17 +77,14 @@ class CategoryController {
         .json({ error: "Make sure your category ID is correct" });
     }
 
-    let path;
-    if (request.file) {
-      path = request.file;
-    }
+    const { filename: path } = request.file
 
     await Category.update({
       name,
       path,
-    });
+    },{where: {id}})
 
-    return response.status(200).json();
+    return response.status(200).json({name});
   }
 }
 
