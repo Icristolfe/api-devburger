@@ -17,7 +17,8 @@ class SessionController {
             .json({ error: 'Make sure your password or email are correct' })
         }
 
-        if (!(schema.isValid(request.body))){ userEmailOrPasswordIncorrect()}
+        if (!(schema.isValid(request.body))){ 
+            return userEmailOrPasswordIncorrect()}
         
 
         const { email, password } = request.body
@@ -26,10 +27,12 @@ class SessionController {
             where: { email },
         })
 
-        if (!user){ userEmailOrPasswordIncorrect()}
+        if (!user){
+            return userEmailOrPasswordIncorrect()}
         
 
-        if (!(await user.passwordCheck(password))){ userEmailOrPasswordIncorrect()}
+        if (!(await user.passwordCheck(password))){ 
+            return userEmailOrPasswordIncorrect()}
         
 
         return response.json({ id: user.id,
