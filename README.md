@@ -1,10 +1,10 @@
-# api-devburger
+# api-hamburgueria
 
 ![NodeJS](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
 ![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 ![PostgresSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 
-<h1> Api para o uso da lanchonete do DevBurger </h1>
+<h1> Api para o uso de hambuergueria </h1>
 
 <p> API desenvolvida para interagir com o front-end e com banco de dados Postgres e MongoDB para a lanchonete do DevClub de nome DevBurger.</p>
 
